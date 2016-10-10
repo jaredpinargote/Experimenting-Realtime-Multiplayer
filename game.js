@@ -1,7 +1,7 @@
 var util = require("util"),
     io = require("socket.io")({
       transports : ["websocket"],
-      "log level", 2
+      "log level": 2
     }),
     Player = require("./player").Player;
 
