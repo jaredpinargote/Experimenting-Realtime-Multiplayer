@@ -1,5 +1,8 @@
 var util = require("util"),
-    io = require("socket.io"),
+    io = require("socket.io")({
+      transports : ["websocket"],
+      "log level", 2
+    }),
     Player = require("./player").Player;
 
 var socket,
@@ -8,13 +11,6 @@ var socket,
 function init() {
     players = [];
     socket = io.listen(8000);
-    socket.configure(function() {
-    // Only use WebSockets
-    socket.set("transports", ["websocket"]);
-
-    // Restrict log output
-    socket.set("log level", 2);
-  });
     setEventHandlers();
   };
 
