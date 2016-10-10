@@ -1,0 +1,20 @@
+{
+  "name": "firstmpgame",
+  "version": "1.0.0",
+  "description": "experimental realtime node multiplayer",
+  "engines": {
+    "node": "4.5.0",
+    "npm": "2.15.9"
+  },
+  "keywords": [
+    "example",
+    "realtime",
+    "multiplayer"
+  ],
+  "author": "Jared Pinargote",
+  "license": "MIT",
+  "dependencies": {
+    "foreman": "2.0.0",
+    "socket.io": "1.5.0"
+  }
+}
