@@ -18,6 +18,6 @@
   "license": "MIT",
   "dependencies": {
     "foreman": "2.0.0",
-    "socket.io": "1.5.0"
+    "socket.io": "0.8.6"
   }
 }
