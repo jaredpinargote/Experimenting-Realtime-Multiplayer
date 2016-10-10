@@ -6,7 +6,7 @@ var util = require("util"),
     Player = require("./player").Player;
     server.listen(process.env.PORT || 8000);
     app.get('/', function (req, res) {
-  res.sendfile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/index.html');
 });
 
 var socket,
