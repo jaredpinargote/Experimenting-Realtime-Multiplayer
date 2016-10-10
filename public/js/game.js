@@ -34,7 +34,7 @@ function init() {
 	localPlayer = new Player(startX, startY);
 
 	// Start listening for events
-	socket = io.connect("http://localhost", {port: process.env.PORT || 8000, transports: ["websocket"]});
+	socket = io.connect("http://localhost", {port: 8000, transports: ["websocket"]});
 	remotePlayers = [];
 	setEventHandlers();
 };

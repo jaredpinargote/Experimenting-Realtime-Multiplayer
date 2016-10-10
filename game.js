@@ -1,5 +1,8 @@
 var util = require("util"),
-    io = require("socket.io") ,
+    express = require('express'),
+    app = express(),
+    server = require('http').createServer(app),
+    io = require('socket.io').listen(server),
     Player = require("./player").Player;
 
 var socket,
@@ -7,19 +10,12 @@ var socket,
 
 function init() {
     players = [];
-    socket = io.listen(process.env.PORT || 8000);
-    socket.configure(function() {
-    // Only use WebSockets
-    socket.set("transports", ["websocket"]);
-
-    // Restrict log output
-    socket.set("log level", 2);
-  });
+    server.listen(process.env.PORT || 8000);
     setEventHandlers();
   };
 
 var setEventHandlers = function() {
-    socket.sockets.on("connection", onSocketConnection);
+    io.sockets.on("connection", onSocketConnection);
 };
 
 function onSocketConnection(client) {
