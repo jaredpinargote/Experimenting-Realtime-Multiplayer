@@ -4,13 +4,16 @@ var util = require("util"),
     server = require('http').createServer(app),
     io = require('socket.io').listen(server),
     Player = require("./player").Player;
+    server.listen(process.env.PORT || 8000);
+    app.get('/', function (req, res) {
+  res.sendfile(__dirname + '/index.html');
+});
 
 var socket,
     players;
 
 function init() {
     players = [];
-    server.listen(process.env.PORT || 8000);
     setEventHandlers();
   };
 
