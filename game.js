@@ -5,8 +5,9 @@ var util = require("util"),
     io = require('socket.io').listen(server),
     Player = require("./player").Player;
     server.listen(process.env.PORT || 8000);
+    app.use(express.static(__dirname + '/public'));
     app.get('/', function (req, res) {
-  res.sendFile('public/index.html');
+  res.render('index');
 });
 
 var socket,
