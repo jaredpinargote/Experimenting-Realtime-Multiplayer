@@ -18,6 +18,8 @@
   "license": "MIT",
   "dependencies": {
     "foreman": "2.0.0",
-    "socket.io": "0.8.6"
+    "socket.io": "0.8.6",
+    "express": "2.15.9",
+    "http": "2.15.9"
   }
 }
